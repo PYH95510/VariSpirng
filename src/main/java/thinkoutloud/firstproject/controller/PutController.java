@@ -51,7 +51,6 @@ public class PutController {
     @PutMapping(value = "/member3")
     public ResponseEntity<MemberDTO> postMemberDto3(@RequestBody MemberDTO memberDTO) {
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(memberDTO);
-
     }
 
 }
