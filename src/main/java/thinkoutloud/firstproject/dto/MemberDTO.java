@@ -7,7 +7,7 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString //These are all Lombok
+@ToString //refactor - delombok
 public class MemberDTO {
 
     private String name;
