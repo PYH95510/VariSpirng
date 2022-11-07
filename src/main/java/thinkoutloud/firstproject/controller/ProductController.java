@@ -68,7 +68,6 @@ public class ProductController {
         String productName = productDto.getProductName();
         int productPrice = productDto.getProductPrice();
         int productStock = productDto.getProductStock();
-
         ProductDto response = productService
                 .saveProduct(productId, productName, productPrice, productStock);
 
