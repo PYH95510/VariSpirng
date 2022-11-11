@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import thinkoutloud.firstproject.common.Constants.ExceptionClass;
-import thinkoutloud.firstproject.common.exception.AroundHubException;
+import thinkoutloud.firstproject.common.Constants;
+import thinkoutloud.firstproject.common.exception.thinkoutloudException;
 import thinkoutloud.firstproject.data.dto.ProductDto;
 import thinkoutloud.firstproject.service.ProductService;
 
@@ -88,8 +88,8 @@ public class ProductController {
     }
 
     @PostMapping(value = "/product/exception")
-    public void exceptionTest() throws AroundHubException {
-        throw new AroundHubException(ExceptionClass.PRODUCT, HttpStatus.FORBIDDEN, "접근이 금지되었습니다.");
+    public void exceptionTest() throws thinkoutloudException {
+        throw new thinkoutloudException(Constants.ExceptionClass.PRODUCT, HttpStatus.FORBIDDEN, "접근이 금지되었습니다.");
     }
 
 }
