@@ -66,7 +66,7 @@ public class GetController {
 
     // http://localhost:8080/api/v1/get-api/request3?name=Yohan&email=pyh95510@gmail.com&organization=student
     @GetMapping(value="/request3")
-    public String getRequestParam3(MemberDTO memberDTO){
+    public String getRequestParam3(MemberDTO memberDTO){ //think it as url value is an input for every method.
         //return memberDTO.getName() + " " + memberDTO.getEmail() + " " + memberDTO.getOrganization();
         return memberDTO.toString();
     }
