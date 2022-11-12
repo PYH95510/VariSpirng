@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import thinkoutloud.firstproject.dto.MemberDTO;
+import thinkoutloud.firstproject.data.dto.MemberDTO;
 
 @RestController
 @RequestMapping("/api/v1/put-api")
@@ -45,7 +45,8 @@ public class PutController {
     @PutMapping(value = "/member2")
     public MemberDTO postMemberDto2(@RequestBody MemberDTO memberDTO) {
         return memberDTO;
-    }
+    } //return as json type, it is more preferred
+
 
     // http://localhost:8080/api/v1/put-api/member2
     @PutMapping(value = "/member3")

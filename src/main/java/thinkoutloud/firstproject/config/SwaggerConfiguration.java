@@ -21,16 +21,16 @@ public class SwaggerConfiguration {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("thinkoutloud.firstproject"))
+                .apis(RequestHandlerSelectors.basePackage("thinkoutloud.firstproject"))//Where are you going to scan. Base package name usually
                 .paths(PathSelectors.any())
                 .build();
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Around Hub Open API Test with Swagger")
-                .description("설명 부분")
-                .version("1.0.0")
+                .title("Thinkout loud Open API Test with Swagger")
+                .description("Description")
+                .version("1.0.0") //accordingly to pom.xml version
                 .build(); //we use api infobuilder to build information that we want
     }
 }
