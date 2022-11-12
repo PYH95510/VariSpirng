@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import thinkoutloud.firstproject.dto.MemberDTO;
+import thinkoutloud.firstproject.data.dto.MemberDTO;
 
 @RestController
 @RequestMapping("/api/v1/post-api")
@@ -34,6 +34,12 @@ public class PostController {
 
         return sb.toString();
     }
+
+    /*body should be json file type like below.
+    {"name" : "Yohan",
+     "email" : "pyh95510@gmail.com",
+     "organization" : "student"
+    }*/
 
     // http://localhost:8080/api/v1/post-api/member2
     @PostMapping(value = "/member2")
