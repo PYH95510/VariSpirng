@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import thinkoutloud.firstproject.dto.MemberDTO;
+import thinkoutloud.firstproject.data.dto.MemberDTO;
 
 
 @RestController
@@ -34,7 +34,8 @@ public class GetController {
 
     // http://localhost:8080/api/v1/get-api/variable2/{String 값}
     @GetMapping(value = "/variable2/{variable}")
-    public String getVariable2(@PathVariable("variable") String var) {
+    public String getVariable2(@PathVariable("variable") String var) //when we are not sure what is going to be inside the var, we can just put parenthesis right next to the pathvariables.
+    {
         return var;
     }
 
