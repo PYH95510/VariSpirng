@@ -13,7 +13,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @Builder
-public class NaverUriDto {
+public class NaverUrlDto {
 
     private String message;
 

@@ -27,7 +27,7 @@ public class ProductServiceImpl implements ProductService {
 
         LOGGER.info("[saveProduct] productDataHandler 로 상품 정보 저장 요청");
         Product product = productDataHandler.saveProductEntity(productId, productName,
-                productPrice, productStock);
+                productPrice, productStock); //here we are requesting to save data to saveProductEntity
 
         LOGGER.info("[saveProduct] Entity 객체를 DTO 객체로 변환 작업. productId : {}",
                 product.getId());

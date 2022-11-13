@@ -18,9 +18,9 @@ import thinkoutloud.firstproject.data.dto.ProductDto;
 @AllArgsConstructor
 @Builder
 @ToString
-@Table(name = "product")
+@Table(name = "product") //how would you define the name in the database so we should use annotation table
 public class Product extends BaseEntity{
-
+    //these will go 1:1 mapping to the database
     @Id
     String id;
 

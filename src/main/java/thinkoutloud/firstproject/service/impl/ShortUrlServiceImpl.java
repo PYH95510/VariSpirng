@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 import thinkoutloud.firstproject.data.dao.ShortUrlDAO;
-import thinkoutloud.firstproject.data.dto.NaverUriDto;
+import thinkoutloud.firstproject.data.dto.NaverUrlDto;
 import thinkoutloud.firstproject.data.dto.ShortUrlResponseDto;
 import thinkoutloud.firstproject.data.entity.ShortUrl;
 import thinkoutloud.firstproject.data.repository.ShortUrlRedisRepository;
@@ -52,7 +52,7 @@ public class ShortUrlServiceImpl implements ShortUrlService {
 
         if (getShortUrl == null) {
             LOGGER.info("[getShortUrl] No Entity in Database.");
-            ResponseEntity<NaverUriDto> responseEntity = requestShortUrl(clientId, clientSecret,
+            ResponseEntity<NaverUrlDto> responseEntity = requestShortUrl(clientId, clientSecret,
                     originalUrl);
 
             orgUrl = responseEntity.getBody().getResult().getOrgUrl();
@@ -89,7 +89,7 @@ public class ShortUrlServiceImpl implements ShortUrlService {
             throw new RuntimeException();
         }
 
-        ResponseEntity<NaverUriDto> responseEntity = requestShortUrl(clientId, clientSecret,
+        ResponseEntity<NaverUrlDto> responseEntity = requestShortUrl(clientId, clientSecret,
                 originalUrl);
 
         String orgUrl = responseEntity.getBody().getResult().getOrgUrl();
@@ -139,7 +139,7 @@ public class ShortUrlServiceImpl implements ShortUrlService {
         shortUrlDAO.deleteByOriginalUrl(url);
     }
 
-    private ResponseEntity<NaverUriDto> requestShortUrl(String clientId, String clientSecret,
+    private ResponseEntity<NaverUrlDto> requestShortUrl(String clientId, String clientSecret,
                                                         String originalUrl) {
         LOGGER.info("[requestShortUrl] client ID : ***, client Secret : ***, original URL : {}", originalUrl);
 
@@ -163,8 +163,8 @@ public class ShortUrlServiceImpl implements ShortUrlService {
         RestTemplate restTemplate = new RestTemplate();
 
         LOGGER.info("[requestShortUrl] request by restTemplate");
-        ResponseEntity<NaverUriDto> responseEntity = restTemplate.exchange(uri, HttpMethod.GET,
-                entity, NaverUriDto.class);
+        ResponseEntity<NaverUrlDto> responseEntity = restTemplate.exchange(uri, HttpMethod.GET,
+                entity, NaverUrlDto.class);
 
         LOGGER.info("[requestShortUrl] request has been successfully complete.");
 

@@ -27,7 +27,7 @@ public class ProductController {
     private final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
     private final ProductService productService;
 
-    @Autowired
+    @Autowired // by using autowired, we do not need to newly instantiate productservice.
     public ProductController(ProductService productService) {
         this.productService = productService;
     }
